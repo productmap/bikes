@@ -1,0 +1,77 @@
+.bikes {
+  padding-top: 100px;
+  padding-bottom: 60px;
+  filter: var(--base-shadow);
+  @media screen and (max-width: 800px) {
+    padding-top: 40px;
+    padding-bottom: 30px;
+    position: relative;
+  }
+
+  &__title {
+    @media screen and (max-width: 800px) {
+      padding-bottom: 40px;
+    }
+  }
+
+  &__selector {
+    position: absolute;
+    right: 40px;
+    top: 130px;
+    @media screen and (max-width: 800px) {
+      top: 150px;
+      left: 18px;
+      z-index: 10;
+    }
+  }
+
+  &__slider {
+    padding-top: 50px;
+    width: 100%;
+    filter: var(--base-shadow);
+  }
+
+  &__slider-wrapper > .swiper-pagination  {
+    padding-top: 18px;
+    position: unset;
+  }
+
+  &__card {
+    display: flex;
+    flex-flow: column;
+    border-radius: 20px;
+    max-width: 380px;
+    justify-content: center;
+    align-items: start;
+
+    &:hover {
+      filter: var(--base-shadow);
+    }
+
+    @media screen and (max-width: 800px) {
+      align-items: center;
+      background-color: #F4F4F4;
+      border: var(--base-border-line);
+    }
+  }
+
+  &__image {
+    background-color: #F4F4F4;
+    border-radius: 20px;
+    padding: 20px;
+    width: 100%;
+  }
+
+  &__description {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 18px;
+    padding-bottom: 16px;
+    padding-top: 22px;
+    color: var(--color-primary-text);
+    @media screen and (max-width: 800px) {
+      color: var(--color-inverse-text);
+      font-size: 14px;
+    }
+  }
+}

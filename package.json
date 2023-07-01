@@ -1,0 +1,42 @@
+{
+  "name": "bikes-shop",
+  "version": "0.0.1",
+  "description": "Practicum ed project",
+  "license": "ISC",
+  "author": "Vladislav Eremin",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack serve --mode development --env development",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "autoprefixer": "^10.4.14",
+    "babel-loader": "^9.1.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "cname-webpack-plugin": "^3.0.0",
+    "css-loader": "^6.8.1",
+    "cssnano": "^6.0.1",
+    "gh-pages": "^5.0.0",
+    "html-webpack-plugin": "^5.5.3",
+    "mini-css-extract-plugin": "^2.7.5",
+    "postcss-loader": "^7.3.3",
+    "sass": "^1.63.6",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3",
+    "svg-sprite-loader": "^6.0.11",
+    "svg-transform-loader": "^2.0.13",
+    "svgo-loader": "^4.0.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.88.1",
+    "webpack-cli": "^5.1.4",
+    "swiper": "^9.4.1",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "core-js": "^3.31.0"
+  },
+  "main": "index.js"
+}

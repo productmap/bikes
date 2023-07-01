@@ -1,0 +1,78 @@
+.trainings {
+  display: grid;
+  //justify-content: space-between;
+  grid-template-areas: "title image"
+  "description image"
+  "links image";
+  grid-template-columns: 1fr minmax(280px, max-content);
+  min-height: 424px;
+  padding-top: 180px;
+  padding-bottom: 120px;
+  color: var(--color-primary-text);
+  column-gap: 40px;
+  margin: 0;
+  width: 100%;
+
+  @media screen and (max-width: 800px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "image"
+      "description"
+      "links";
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+
+  &__title {
+    //padding-bottom: 0;
+    @media screen and (max-width: 800px) {
+      padding-bottom: 40px;
+    }
+  }
+
+  &__image {
+    grid-area: image;
+    width: 100%;
+    //max-width: 800px;
+    //min-width: 284px;
+    object-fit: contain;
+  }
+
+  &__paragraph {
+    @media screen and (max-width: 800px) {
+      margin-top: 40px;
+    }
+  }
+
+  &__links {
+    display: inline-flex;
+    align-self: end;
+    grid-area: links;
+    max-width: min-content;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    gap: 30px;
+    padding-top: 20px;
+    @media screen and (max-width: 800px) {
+      margin-top: 40px;
+    }
+  }
+
+  &__link a {
+    color: var(--color-primary-text);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    text-decoration: none;
+
+
+    @media screen and (max-width: 800px) {
+      line-height: 20px;
+    }
+  }
+}
+
+

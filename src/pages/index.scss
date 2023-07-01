@@ -1,0 +1,29 @@
+ // Общий сеттинг
+@use "../utils/normalize.css";
+@use "../fonts/fonts";
+@use "../pages/variables";
+
+// Страницы
+@import "../blocks/page/page";
+
+// Компоненты
+@import "../blocks/btn/btn";
+@import "../blocks/theme/theme";
+@import "../blocks/selector/selector";
+@import "../blocks/section/section";
+@import "../blocks/subscribe/subscribe";
+
+// Блоки
+@import "../blocks/header/header";
+@import "../blocks/menu/menu";
+@import "../blocks/content/content";
+@import "../blocks/cta/cta.scss";
+@import "../blocks/quote/quote";
+@import "../blocks/roads/roads";
+@import "../blocks/slider/slider";
+@import "../blocks/bikes/bikes";
+@import "../blocks/trainings/trainings";
+@import "../blocks/footer/footer";
+
+//@import "../blocks/slider/swiper-bundle.css";
+
