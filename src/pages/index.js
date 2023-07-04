@@ -30,7 +30,7 @@ new Roads("#roads", {
   sliderSlider: ".roads__slider",
   sliderWrapper: ".roads__slider-wrapper",
   slideImage: ".roads__slide",
-  controlsButtons: ".slider__btn",
+  controlsButtons: ".roads__slider-btn",
   data: data,
 });
 
