@@ -1,0 +1,166 @@
+.roads {
+  display: grid;
+  filter: var(--base-shadow);
+  padding: 60px 0 50px 120px;
+  @media screen and (max-width: 800px) {
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 46px;
+  }
+
+  &__slider-wrapper {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column wrap;
+    position: relative;
+  }
+
+  &__slider {
+    display: flex;
+    order: 3;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.5s ease-out;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    max-width: 1350px;
+
+    &_dragging {
+      scroll-behavior: auto;
+      cursor: grab;
+    }
+  }
+
+  &__slide-title {
+    order: 1;
+    font-size: 55px;
+    font-weight: 800;
+    line-height: 60px;
+    letter-spacing: -0.5px;
+    padding-bottom: 46px;
+    @media screen and (max-width: 800px) {
+      width: 60%;
+      padding-bottom: 44px;
+      margin-top: 0;
+      font-size: 32px;
+      line-height: 32px;
+    }
+  }
+
+  &__paragraph {
+    max-width: 460px;
+    margin-bottom: 80px;
+    order: 2;
+    @media screen and (max-width: 800px) {
+      order: 4;
+      margin: 40px 0;
+      min-height: 60px;
+    }
+  }
+
+  &__slider-controls {
+    display: inline-flex;
+    order: 4;
+    padding-top: 50px;
+    gap: 20px;
+    @media screen and (max-width: 800px) {
+      position: absolute;
+      top: 8px;
+      right: 0;
+      order: 2;
+      justify-content: flex-end;
+      width: 40%;
+      padding: 0;
+      margin-top: 32px;
+      gap: 10px;
+    }
+  }
+
+  &__slider-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+    background-color: transparent;
+    border: var(--base-border-line);
+    border-radius: 50%;
+    cursor: pointer;
+    color: var(--color-primary-text);
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 40px;
+    transition: var(--base-transition);
+    @media screen and (max-width: 800px) {
+      width: 24px;
+      height: 24px;
+      font-size: 22px;
+      line-height: 24px;
+    }
+
+    &_next {
+      text-indent: 3px;
+    }
+  }
+
+  &__slide {
+    position: relative;
+    transform: scale(1);
+    transition: all ease-in-out .6s;
+    max-height: 400px;
+    @media screen and (max-width: 800px) {
+      max-height: 176px;
+    }
+
+    &:not(:first-of-type) {
+      margin-left: 40px;
+    }
+
+    &:last-child {
+      margin-right: 100%;
+    }
+
+    &:not(.active) {
+      //transform: scale(.9);
+      //opacity: .6;
+
+      > .roads__image-badge {
+        opacity: 0;
+      }
+    }
+
+    &.active {
+      > .roads__image-badge {
+        animation: fadeIn .65s;
+        @keyframes fadeIn {
+          0% {
+            opacity: 0;
+          }
+          50% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  &__image {
+    object-fit: cover;
+    z-index: 5;
+  }
+
+  &__image-badge {
+    position: absolute;
+    bottom: 16px;
+    left: 0;
+    z-index: 5;
+    @media screen and (max-width: 800px) {
+      max-width: 70px;
+    }
+  }
+}

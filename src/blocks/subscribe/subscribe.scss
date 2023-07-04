@@ -1,0 +1,113 @@
+.subscribe {
+  &__title {
+    max-width: 284px;
+    padding-bottom: 50px;
+    margin: 0;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    @media screen and (max-width: 800px) {
+      padding-bottom: 40px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+  }
+
+  &__input {
+    border: 1px solid rgba(199, 199, 199, .5);
+    transition: 0.3s;
+    border-radius: .25rem;
+    padding: 10px 20px;
+    color: var(--color-primary-text);
+    font-family: 'Inter', serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 28px;
+    box-sizing: content-box;
+    max-width: 360px;
+    width: 100%;
+    background-color: transparent;
+    position: relative;
+    // фикс фона автозаполнения
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      -webkit-text-fill-color: var(--color-primary-text);
+      -webkit-box-shadow: 0 0 0 1000px var(--color-background-primary) inset;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+  }
+
+  &__input::placeholder {
+    opacity: .5;
+    color: var(--color-primary-text);
+    transition: 0.3s;
+  }
+
+  &__input:hover::placeholder {
+    color: var(--color-primary-text);
+    cursor: pointer;
+    opacity: 1;
+  }
+
+  &__input:hover {
+    cursor: pointer;
+  }
+
+  &__input:focus {
+    border: 1px solid rgba(199, 199, 199, 1);
+    outline: none;
+    caret-color: var(--color-primary-text);
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    & + .subscribe__input-label {
+      opacity: 1;
+      transform: translateY(-26px);
+    }
+  }
+
+  &__input-label {
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    transition: var(--base-transition);
+    transform: translateY(2px);
+    background-color: var(--color-background-secondary);
+    opacity: 0;
+    padding: 2px 8px;
+  }
+
+  &__input-error {
+    position: absolute;
+    top: 60px;
+    font-size: 14px;
+    color: var(--color-primary-text);
+  }
+
+  &__submit {
+    border: none;
+    color: var(--color-primary-text);
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 28px;
+    background-color: transparent;
+    padding: 11px 22px;
+    box-sizing: border-box;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    z-index: 2;
+    display: none;
+  }
+}

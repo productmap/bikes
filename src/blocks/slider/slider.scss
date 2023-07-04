@@ -1,0 +1,34 @@
+
+.slider {
+  //width: 100%;
+  //white-space: nowrap;
+  //cursor: pointer;
+  //overflow: hidden;
+  touch-action: pan-y
+}
+
+.slide {
+  //height: 400px;
+  //object-fit: cover;
+  //width: calc(100% / 3);
+  @media screen and (min-width: 800px) {
+
+  }
+}
+
+.slide:not(:first-child) {
+  //margin-left: 18px;
+}
+
+.slider__btn:active {
+  transform: scale(.9);
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.roads__slider-btn_next {
+  text-indent: 3px;
+}
+
+.slider__btn_prev {
+  text-indent: -3px;
+}

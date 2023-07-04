@@ -1,0 +1,38 @@
+// Светлая тема
+.theme-light {
+  --color-primary-text: #151515;
+  --color-secondary-text: #222222;
+  --color-inverse-text: #151515;
+  --color-copyright: #CFCFCF;
+  --color-background-primary: #F4F4F4;
+  --color-background-secondary: #EFEFEF;
+  --switcher-icons: #CFCFCF;
+  --logo: url("./../images/bikes-logo-dark.svg") no-repeat left;
+  --color-product-line: #D7D4D4;
+}
+
+// Темная тема
+.theme-dark {
+  --color-primary-text: #fff;
+  --color-secondary-text: #E5E5E5;
+  --color-inverse-text: #151515;
+  --color-copyright: #565656;
+  --color-background-primary: #333333;
+  --color-background-secondary: #2F2F2F;
+  --switcher-icons: #676767;
+  --logo: url("./../images/bikes-logo-white.svg") no-repeat left;
+  --color-product-line: #707070;
+}
+
+// Глобальные переменные
+:root {
+  --base-border-radius: 10px;
+  --base-border-line: 1px solid rgba(199, 199, 199, 0.5);
+  --base-transition: all .1s ease-in-out;
+  --base-shadow: drop-shadow(0px 50px 160px rgba(0, 0, 0, 0.06));
+  --swiper-pagination-color: var(--color-primary-text);
+  --swiper-pagination-bullet-size: 4px;
+  --swiper-pagination-bullet-width: 4px;
+  --swiper-pagination-bullet-height: 4px;
+  --swiper-pagination-bullet-horizontal-gap: 3px;
+}

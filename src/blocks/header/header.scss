@@ -1,0 +1,110 @@
+.header {
+  display: flex;
+  z-index: 5;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1260px;
+  padding: 18px 30px;
+  background-color: var(--color-background-primary);
+  flex-flow: row;
+  position: sticky;
+  top: 0;
+  @media screen and (max-width: 800px) {
+    flex-flow: column nowrap;
+    padding: 18px 18px;
+    &_opened {
+      opacity: 1;
+      visibility: visible;
+      position: fixed;
+      overflow-y: scroll;
+      height: 100vh;
+    }
+  }
+
+  &__mobile-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    order: 1;
+    display: inline-flex;
+    color: var(--color-primary-text);
+    font-size: 34px;
+    text-decoration: none;
+    align-items: center;
+    height: 34px;
+    width: 167px;
+    opacity: .8;
+  }
+
+  &__toggle {
+    display: none;
+    order: 2;
+    //margin-right: 30px;
+    @media (max-width: 800px) {
+      cursor: pointer;
+      padding: 16px 0;
+      display: inline-flex;
+      align-self: center;
+      //margin-right: 18px;
+    }
+
+    &.close ~ .header__toggle-hamburger {
+      background: transparent;
+    }
+
+    &.close ~ .header__toggle-hamburger::before {
+      transform: rotate(-45deg);
+      top: 0;
+    }
+
+    &.close .header__toggle-hamburger::after {
+      transform: rotate(45deg);
+      top: 0;
+    }
+  }
+
+  &__toggle-hamburger {
+    background: var(--color-primary-text);
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 22px;
+  }
+
+  &__toggle-hamburger::before,
+  &__toggle-hamburger::after {
+    background: var(--color-primary-text);
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    width: 100%;
+  }
+
+  &__toggle-hamburger::before {
+    top: 8px;
+  }
+
+  &__toggle-hamburger::after {
+    top: -8px;
+  }
+
+  .header__toggle.close .header__toggle-hamburger {
+    background: transparent;
+  }
+
+  .header__toggle.close .header__toggle-hamburger::before {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+
+  .header__toggle.close .header__toggle-hamburger::after {
+    transform: rotate(45deg);
+    top: 0;
+  }
+}
