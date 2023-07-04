@@ -30,5 +30,9 @@
   --base-border-line: 1px solid rgba(199, 199, 199, 0.5);
   --base-transition: all .1s ease-in-out;
   --base-shadow: drop-shadow(0px 50px 160px rgba(0, 0, 0, 0.06));
-
+  --swiper-pagination-color: var(--color-primary-text);
+  --swiper-pagination-bullet-size: 4px;
+  --swiper-pagination-bullet-width: 4px;
+  --swiper-pagination-bullet-height: 4px;
+  --swiper-pagination-bullet-horizontal-gap: 3px;
 }

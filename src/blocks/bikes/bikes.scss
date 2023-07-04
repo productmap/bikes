@@ -1,39 +1,47 @@
 .bikes {
-  padding-top: 100px;
+  padding-top: 80px;
   padding-bottom: 60px;
   filter: var(--base-shadow);
   @media screen and (max-width: 800px) {
-    padding-top: 40px;
+    padding-top: 0;
     padding-bottom: 30px;
     position: relative;
   }
 
   &__title {
     @media screen and (max-width: 800px) {
-      padding-bottom: 40px;
+      padding-bottom: 30px;
+      padding-top: 28px;
     }
   }
 
   &__selector {
     position: absolute;
-    right: 40px;
-    top: 130px;
+    right: 30px;
+    top: 102px;
     @media screen and (max-width: 800px) {
-      top: 150px;
+      top: 108px;
       left: 18px;
       z-index: 10;
     }
   }
 
   &__slider {
-    padding-top: 50px;
+    padding-top: 62px;
     width: 100%;
     filter: var(--base-shadow);
   }
 
-  &__slider-wrapper > .swiper-pagination  {
+  &__slider-wrapper > .swiper-pagination {
     padding-top: 18px;
     position: unset;
+  }
+
+  &__slider-pagination {
+    @media screen and (max-width: 800px) {
+      position: initial;
+      padding-top: 8px;
+    }
   }
 
   &__card {
@@ -60,18 +68,23 @@
     border-radius: 20px;
     padding: 20px;
     width: 100%;
+    @media screen and (max-width: 800px) {
+      padding: 16px 16px 0 16px;
+    }
   }
 
   &__description {
     font-weight: 600;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 18px;
     padding-bottom: 16px;
     padding-top: 22px;
+    padding-left: 4px;
     color: var(--color-primary-text);
     @media screen and (max-width: 800px) {
       color: var(--color-inverse-text);
       font-size: 14px;
+      padding-top: 0;
     }
   }
 }

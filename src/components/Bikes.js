@@ -1,5 +1,5 @@
 export default class Bikes {
-  constructor(selector, { ...props } = {}) {
+  constructor(selector, {...props} = {}) {
     this._selector = document.querySelector(selector);
     this._container = props.container;
     this._slider = document.querySelector(this._container);
@@ -15,11 +15,15 @@ export default class Bikes {
     const slide = document.createElement("div");
     slide.classList.add("swiper-slide", this._card);
 
+    const slideLink = document.createElement('a');
+    slideLink.href = "https://www.sigmasports.com/item/Cervelo/Caledonia-5-Ultegra-Disc-Road-Bike-2021/RDEN";
+    slide.appendChild(slideLink);
+
     const slideImage = document.createElement("img");
     slideImage.classList.add(this._cardImage);
     slideImage.src = `images/${data.image}`;
     slideImage.alt = data.model;
-    slide.appendChild(slideImage);
+    slideLink.appendChild(slideImage);
 
     const slideDescription = document.createElement("p");
     slideDescription.classList.add(this._cardDescription);
