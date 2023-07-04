@@ -17,7 +17,7 @@
 <header class="header">
   <div class="header__mobile-wrapper">
     <svg class="header__logo">
-      <use xlink:href="./images/bikes-logo.svg#logo"></use>
+<!--      <use xlink:href="./images/bikes-logo.svg#logo"></use>-->
     </svg>
     <div class="header__toggle">
       <span class="header__toggle-hamburger"></span>
@@ -58,17 +58,16 @@
       и Грэвел
     </h1>
     <div class="cta__product-overlay">
-      <!--      <div class="cta__overlay-background"></div>-->
       <div class="cta__product-image"></div>
       <img src="<%=require('./images/product__overlay.png')%>" alt="" class="cta__overlay-background">
     </div>
     <p class="cta__paragraph">Триатлонные старты, горные серпантины или грейвел заезды по&nbsp;живописным маршрутам&nbsp;&mdash;
       нужно только определиться с&nbsp;выбором велосипеда и&nbsp;отправиться в&nbsp;путь.</p>
-    <a class="btn btn_animated cta__button" href="#subscribe">Подробнее</a>
+    <a class="btn btn_animated cta__button" href="#quote">Подробнее</a>
     <span class="cta__product-description">Cannondale Systemsix</span>
   </section>
 
-  <section class="section quote">
+  <section class="section quote" id="quote">
     <div class="quote__columns">
       <div class="quote__column">
         <img class="quote__image" src="<%=require('./images/quote.png')%>" alt="Эдди Меркс">
@@ -86,11 +85,10 @@
       <h3 class="section__title roads__slide-title"></h3>
       <p class="section__paragraph roads__paragraph"></p>
       <div class="roads__slider">
-        <img class="roads__image-badge" src="<%=require('./images/road-1-badge.png')%>" alt="badge">
       </div>
       <div class="roads__slider-controls">
-        <button id="left" class="slider__btn slider__btn_prev">&lsaquo;</button>
-        <button id="right" class="slider__btn slider__btn_next">&rsaquo;</button>
+        <button id="left" class="roads__slider-btn roads__slider-btn_prev">&lsaquo;</button>
+        <button id="right" class="roads__slider-btn roads__slider-btn_next">&rsaquo;</button>
       </div>
     </div>
   </section>
@@ -100,7 +98,7 @@
     <ul class="selector bikes__selector" id="bikes-types"></ul>
     <div class="bikes__slider swiper">
       <div class="bikes__slider-wrapper swiper-wrapper"></div>
-      <div class="swiper-pagination"></div>
+      <div class="swiper-pagination bikes__slider-pagination"></div>
     </div>
   </section>
 
@@ -112,10 +110,10 @@
       эти тренировки поможет приложение Strava, а&nbsp;также это приложение позволит построить тренировочный план.</p>
     <ul class="trainings__links">
       <li class="trainings__link">
-        <a href="#home">Strava</a>
+        <a href="https://www.strava.com">Strava</a>
       </li>
       <li class="trainings__link">
-        <a href="#home">Komoot</a>
+        <a href="https://www.komoot.com">Komoot</a>
       </li>
     </ul>
   </section>
@@ -138,7 +136,7 @@
           <span class="subscribe__input-error" id="email-input-error"></span>
         </form>
       </div>
-      <p class="footer__copyright">© Bikes 2023</p>
+      <p class="footer__copyright">© Road Club 2021</p>
     </li>
     <li class="footer__column footer__column-theme-switcher">
       <div class="theme">
