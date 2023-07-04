@@ -1302,7 +1302,7 @@ template {
   z-index: 2;
 }
 
-.slider__btn {
+.roads__slider-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1320,22 +1320,22 @@ template {
   transition: var(--base-transition);
 }
 @media screen and (max-width: 800px) {
-  .slider__btn {
+  .roads__slider-btn {
     font-size: 32px;
     line-height: 24px;
   }
 }
 
-.slider__btn:active {
+.roads__slider-btn:active {
   transform: scale(0.9);
   box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
-.slider__btn_next {
+.roads__slider-btn_next {
   text-indent: 3px;
 }
 
-.slider__btn_prev {
+.roads__slider-btn_prev {
   text-indent: -3px;
 }
 
