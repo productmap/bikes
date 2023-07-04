@@ -1,5 +1,5 @@
 export default class Roads {
-  constructor(selector, { ...props } = {}) {
+  constructor(selector, {...props} = {}) {
     this._slider = document.querySelector(props.sliderSlider);
     this._slides = props.data ?? {};
     this._controlsButtons = document.querySelectorAll(props.controlsButtons);
@@ -74,21 +74,26 @@ export default class Roads {
   }
 
   _nextSlide() {
+    this._slider.querySelectorAll(".roads__slide")[this._activeIndex].classList.remove("active");
     const nextIndex = this._activeIndex + 1;
     this._sliderAbout.innerHTML =
       this._slides[nextIndex].description;
     this._sliderTitle.innerHTML = this._slides[nextIndex].road;
-    this._slideBadge.src = require(`./../images/${this._slides[nextIndex].badge}`);
+    // this._slideBadge.src = require(`./../images/${this._slides[nextIndex].badge}`);
     this._activeIndex += 1;
+    // console.log(this._slider.querySelectorAll(".bikes__card"))
+    this._slider.querySelectorAll(".roads__slide")[this._activeIndex].classList.add("active");
   }
 
   _prevSlide() {
+    this._slider.querySelectorAll(".roads__slide")[this._activeIndex].classList.remove("active");
     const prevIndex = this._activeIndex - 1;
     this._sliderAbout.innerHTML =
       this._slides[prevIndex].description;
     this._sliderTitle.innerHTML = this._slides[prevIndex].road;
-    this._slideBadge.src = require(`./../images/${this._slides[prevIndex].badge}`);
+    // this._slideBadge.src = require(`./../images/${this._slides[prevIndex].badge}`);
     this._activeIndex -= 1;
+    this._slider.querySelectorAll(".roads__slide")[this._activeIndex].classList.add("active");
   }
 
   _eventListeners() {
@@ -129,7 +134,12 @@ export default class Roads {
     this._slides.forEach((slide, idx) => {
       const newSlide = document.createElement("div");
       newSlide.classList.add("roads__slide");
-      if(idx === 0) newSlide.classList.toggle("active");
+      if (idx === 0) {
+        newSlide.classList.add("active");
+        this._sliderAbout.innerHTML =
+          this._slides[0].description;
+        this._sliderTitle.innerHTML = this._slides[0].road;
+      }
 
       const image = document.createElement("img");
       image.classList.add("roads__image");
@@ -137,12 +147,12 @@ export default class Roads {
       image.alt = slide.road;
       image.draggable = false;
 
-      // const badge = document.createElement("img");
-      // badge.classList.add("roads__image-badge");
-      // badge.src = require(`./../images/${slide.badge}`);
-      // badge.alt = slide.road;
+      const badge = document.createElement("img");
+      badge.classList.add("roads__image-badge");
+      badge.src = require(`./../images/${slide.badge}`);
+      badge.alt = slide.road;
 
-      newSlide.append(image);
+      newSlide.append(image, badge);
 
       this._slider.append(newSlide);
     });
